@@ -1,0 +1,6 @@
+Starter\Account\login.class
+Starter\Account\loginSteps.class
+Starter\TestSuite.class
+Starter\Register\register.class
+Starter\utils\Endpoint.class
+Starter\Register\registerSteps.class

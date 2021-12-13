@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: Starter.TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.799 s <<< FAILURE! - in Starter.TestSuite
+Login Success(Login)  Time elapsed: 7.22 s  <<< ERROR!
+java.lang.RuntimeException: Some exception during recording fields
+Caused by: java.net.ConnectException: Connection refused: connect
+
