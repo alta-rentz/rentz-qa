@@ -1,4 +1,4 @@
-package starter;
+package Starter;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberSerenityRunner;
 import org.junit.runner.RunWith;
