@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Alta-Test_RestfulAPI.iml" filepath="$PROJECT_DIR$/Alta-Test_RestfulAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rentz-qa.iml" filepath="$PROJECT_DIR$/rentz-qa.iml" />
     </modules>
   </component>
 </project>

@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rentz-qa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Alta-Test_RestfulAPI" target="1.8" />
+      <module name="rentz-qa" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
