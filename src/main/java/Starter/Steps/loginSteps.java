@@ -44,12 +44,12 @@ public class loginSteps {
     public void JsonSchemaEndpointLoginSukses(){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JsonSchema/loginSukses.json"));
+                .body(matchesJsonSchemaInClasspath("JsonSchema/Login/loginSukses.json"));
     }
     //Validasi JSONSchema Login Failed
     public void JsonShemaEndpointLoginFailed(){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/loginFailed.json"));
+                .body(matchesJsonSchemaInClasspath("JSONSchema/Login/loginFailed.json"));
     }
 }
