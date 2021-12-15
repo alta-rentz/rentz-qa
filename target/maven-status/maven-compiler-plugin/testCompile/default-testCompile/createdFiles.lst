@@ -1,6 +1,8 @@
-Starter\Account\login.class
-Starter\Account\loginSteps.class
+Starter\Daftar\Steps\registerFail_1Steps.class
+Starter\Masuk\login.class
+Starter\Masuk\loginSteps.class
 Starter\TestSuite.class
-Starter\Register\register.class
+Starter\Daftar\Register\registerFail_1.class
 Starter\utils\Endpoint.class
-Starter\Register\registerSteps.class
+Starter\Daftar\Register\register.class
+Starter\Daftar\Steps\registerSteps.class

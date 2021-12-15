@@ -1,6 +1,8 @@
 D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\utils\Endpoint.java
-D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Account\login.java
-D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Register\registerSteps.java
-D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Account\loginSteps.java
+D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Masuk\login.java
+D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Daftar\Register\registerFail_1.java
+D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Daftar\Steps\registerFail_1Steps.java
+D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Masuk\loginSteps.java
 D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\TestSuite.java
-D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Register\register.java
+D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Daftar\Register\register.java
+D:\Otnam\Alterra\Rentz_API\src\test\java\Starter\Daftar\Steps\registerSteps.java
