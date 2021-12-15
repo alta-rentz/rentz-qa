@@ -12,8 +12,8 @@ Feature: Register Function
     Then I am get status code 200
     And valid response success register
     Examples:
-      | nama        | email                  | password | phone           |
-      | Olla Ramlan | olla_ramlan@alterra.id | P@ssw0rd | 087890998877383 |
+      | nama         | email                   | password | phone            |
+      | Olla Ramlans | olla_ramlans@alterra.id | P@ssw0rd | 0878909988773812 |
 
   @Register_2
   #TC_2

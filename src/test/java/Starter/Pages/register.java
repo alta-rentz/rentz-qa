@@ -29,33 +29,36 @@ public class register extends baseTest {
 
     @And("valid response success register")
     public void validResponseSuccessRegister() {
+        regSteps.JsonSchemaEndpointRegister();
     }
 
     @And("validate error message nama tidak boleh kosong")
     public void validateErrorMessageNamaTidakBolehKosong() {
+        regSteps.JsonSchemaEndpointRegister();
     }
 
     @And("validate error message Email or Phone Number is Exist")
     public void validateErrorMessageEmailOrPhoneNumberIsExist() {
-
+        regSteps.JsonSchemaEndpointRegister();
     }
 
     @And("validate error message Email must contain email format")
     public void validateErrorMessageEmailMustContainEmailFormat() {
-
-
+        regSteps.JsonSchemaEndpointRegister();
     }
 
     @And("validate error message password cannot less than {int} character")
     public void validateErrorMessagePasswordCannotLessThanCharacter(int arg0) {
-
+        regSteps.JsonSchemaEndpointRegister();
     }
 
     @And("validate error message password cannot be empty")
     public void validateErrorMessagePasswordCannotBeEmpty() {
+        regSteps.JsonSchemaEndpointRegister();
     }
 
     @And("validate error message Phone Number cannot be empty")
     public void validateErrorMessagePhoneNumberCannotBeEmpty() {
+        regSteps.JsonSchemaEndpointRegister();
     }
 }
