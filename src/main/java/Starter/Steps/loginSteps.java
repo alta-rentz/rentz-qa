@@ -47,7 +47,7 @@ public class loginSteps {
                 .body(matchesJsonSchemaInClasspath("JsonSchema/Login/loginSukses.json"));
     }
     //Validasi JSONSchema Login Failed
-    public void JsonShemaEndpointLoginFailed(){
+    public void JsonShemaEndpointLoginFailed(int statuscode, String message){
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/Login/loginFailed.json"));

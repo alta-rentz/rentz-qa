@@ -31,8 +31,8 @@ public class login extends baseTest {
         logSteps.JsonSchemaEndpointLoginSukses();
     }
 
-    @And("valid response failed")
-    public void validResponseFailed() {
-        logSteps.JsonShemaEndpointLoginFailed();
+    @And("Validate failed response body {int} and message {string}")
+    public void validateFailedResponseBodyAndMessage(int statuscode, String message) {
+        logSteps.JsonShemaEndpointLoginFailed(statuscode, message);
     }
 }

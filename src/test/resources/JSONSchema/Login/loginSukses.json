@@ -40,5 +40,6 @@
     "code",
     "data",
     "message"
-  ]
+  ],
+  "additionalProperties": false
 }

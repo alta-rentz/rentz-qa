@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "src/test/resources/Features/",
-        tags = "@LoginFailed_5"
+        tags = "@Register"
 )
 public class TestSuite {
 }
