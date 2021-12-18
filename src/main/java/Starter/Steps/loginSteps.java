@@ -3,7 +3,7 @@ package Starter.Steps;
 import Starter.BaseEndpoint.baseEndpoint;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.simple.JSONObject;
-
+import static org.hamcrest.Matchers.equalTo;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class loginSteps {
@@ -50,6 +50,8 @@ public class loginSteps {
     public void JsonShemaEndpointLoginFailed(int statuscode, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/Login/loginFailed.json"));
+                .body(matchesJsonSchemaInClasspath("JSONSchema/Login/loginFailed.json"))
+                .body("code",equalTo(statuscode))
+                .body("message",equalTo(message));
     }
 }
