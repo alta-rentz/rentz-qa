@@ -3,7 +3,7 @@ package Starter.Steps;
 import Starter.BaseEndpoint.baseEndpoint;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.simple.JSONObject;
-
+import static org.hamcrest.Matchers.*;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class registerSteps {
@@ -42,9 +42,17 @@ public class registerSteps {
     }
 
     //Validasi JSONSchema Register
-    public void JsonSchemaEndpointRegister() {
+    public void JsonSchemaEndpointRegisterSukses() {
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JsonSchema/Daftar/register.json"));
+                .body(matchesJsonSchemaInClasspath("JsonSchema/Daftar/registerSukses.json"))
+                .body("message",equalTo("Successful Operation"));
+    }
+
+    public void JsonSchemaEndpointRegisterFailed(String message) {
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JsonSchema/Daftar/registerFailed.json"))
+                .body("message",equalTo(message));
     }
 }
