@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "UsersID": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Subcategory_Name": {
+              "type": "string"
+            },
+            "SubcategoryID": {
+              "type": "integer"
+            },
+            "CityID": {
+              "type": "integer"
+            },
+            "City_Name": {
+              "type": "string"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Description": {
+              "type": "string"
+            },
+            "Stock": {
+              "type": "integer"
+            },
+            "Url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "UsersID",
+            "Name",
+            "Subcategory_Name",
+            "SubcategoryID",
+            "CityID",
+            "City_Name",
+            "Price",
+            "Description",
+            "Stock",
+            "Url"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ],
+  "additionalProperties": false
+}

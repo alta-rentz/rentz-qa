@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "UsersID": {
+          "type": "integer"
+        },
+        "CreatedAt": {
+          "type": "string"
+        },
+        "Nama": {
+          "type": "string"
+        },
+        "Phone_Number": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "SubcategoryID": {
+          "type": "integer"
+        },
+        "Subcategory_Name": {
+          "type": "string"
+        },
+        "CityID": {
+          "type": "integer"
+        },
+        "City_Name": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "integer"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "Stock": {
+          "type": "integer"
+        },
+        "Longitude": {
+          "type": "number"
+        },
+        "Latitude": {
+          "type": "number"
+        },
+        "Url": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "Guarantee": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ID",
+        "UsersID",
+        "CreatedAt",
+        "Nama",
+        "Phone_Number",
+        "Name",
+        "SubcategoryID",
+        "Subcategory_Name",
+        "CityID",
+        "City_Name",
+        "Price",
+        "Description",
+        "Stock",
+        "Longitude",
+        "Latitude",
+        "Url",
+        "Guarantee"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ],
+  "additionalProperties": false
+}
