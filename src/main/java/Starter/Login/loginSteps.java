@@ -1,4 +1,4 @@
-package Starter.Steps;
+package Starter.Login;
 
 import Starter.BaseEndpoint.baseEndpoint;
 import net.serenitybdd.rest.SerenityRest;
