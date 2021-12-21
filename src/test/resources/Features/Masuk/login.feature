@@ -13,8 +13,8 @@ Feature: Login Function
     Then I am get a status code 200
     And valid response success
     Examples:
-      | email                  | password |
-      | olla_ramlan@alterra.id | P@ssw0rd |
+      | email           | password   |
+      | aldi@alterra.id | P@ssw0rd!@ |
 
   @LoginFailed #Failed #TC_2
   Scenario Outline: Check status code and response with invalid email and valid password body request

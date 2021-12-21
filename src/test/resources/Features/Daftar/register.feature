@@ -13,8 +13,8 @@ Feature: Register Function
     Then I am get status code 200
     And valid response Successful Operation
     Examples:
-      | nama         | email                   | password | phone          |
-      | Olla Ramlane | olla_ramlanes@gmail.com | P@ssw0rd | 08789318313131 |
+      | nama         | email                   | password | phone      |
+      | Olla Ramlane | olla_ramlanen@gmail.com | P@ssw0rd | 0878998887 |
 
   @Register_2
   #TC_2

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "src/test/resources/Features/",
-        tags = "@GetProduct"
+        tags = "@DeleteUser"
 )
 public class TestSuite {
 }
