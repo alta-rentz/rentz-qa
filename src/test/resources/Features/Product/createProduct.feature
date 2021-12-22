@@ -12,16 +12,16 @@
     Then I am get a status code 200 create product
     And validate response body code 200 and message "product created and file uploaded successfully"
     Examples:
-      | name               | subcategory_id | city_id | price | description    | stock | guarantee |
-      | Habis Terang Silau | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
+      | name                     | subcategory_id | city_id | price | description    | stock | guarantee |
+      | Habis Terang siapa suruh | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
 
-  @TC_2
+    @TC_2
     Scenario Outline: User create product with blank product name
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add product name"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Must add product name"
       Examples:
         | name | subcategory_id | city_id | price | description    | stock | guarantee |
         |      | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
@@ -31,8 +31,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add product name"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Must add product name"
       Examples:
         | name | subcategory_id | city_id | price | description    | stock | guarantee |
         |      | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
@@ -64,8 +64,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50k0f | kepo banget lu | 10    | 2         |
@@ -75,8 +75,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    |       | kepo banget lu | 10    | 2         |
@@ -86,8 +86,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    |       | kepo banget lu | 10    | 2         |
@@ -97,8 +97,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price  | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000+ | kepo banget lu | 10    | 2         |
@@ -108,8 +108,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price  | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000- | kepo banget lu | 10    | 2         |
@@ -119,8 +119,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price  | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000. | kepo banget lu | 10    | 2         |
@@ -130,8 +130,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Price must be more than 0"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Price must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price  | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000, | kepo banget lu | 10    | 2         |
@@ -141,8 +141,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Must add description"
       Examples:
         | name             | subcategory_id | city_id | price | description | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 |             | 10    | 2         |
@@ -152,8 +152,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Stock must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10f   | 2         |
@@ -163,8 +163,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Stock must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu |       | 2         |
@@ -174,8 +174,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Stock must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10+   | 2         |
@@ -185,8 +185,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Stock must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10-   | 2         |
@@ -196,8 +196,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Stock must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10.   | 2         |
@@ -207,8 +207,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Stock must be more than 0"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10,   | 2         |
@@ -218,8 +218,8 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 400 create product
+      And validate response body code 400 and message "Bad Request"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10    |           |
@@ -229,27 +229,16 @@
       Given I am success logged in as a user
       And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
+      Then I am get a status code 200 create product
+      And validate response body code 200 and message "product created and file uploaded successfully"
       Examples:
         | name             | subcategory_id | city_id | price | description    | stock | guarantee |
         | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
 
     @TC_22
-    Scenario Outline: User create product and upload Photo in PNG format with size < 1 MB
+    Scenario Outline: User create product and upload Photo size >1MB
       Given I am success logged in as a user
-      And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>" and png size <1MB
-      When I am hit endpoint create product
-      Then I am get a status code 502 create product
-      And validate response body code 502 and message "Must add description"
-      Examples:
-        | name             | subcategory_id | city_id | price | description    | stock | guarantee |
-        | Habis Gelap Item | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
-
-    @TC_23
-    Scenario Outline: User create product and upload Photo in PNG format with size > 1 MB
-      Given I am success logged in as a user
-      And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>" and jpg si
+      And I am set body request name "<name>" subcategory_id "<subcategory_id>" city_id "<city_id>" price "<price>" description "<description>" stock "<stock>" guarantee "<guarantee>"
       When I am hit endpoint create product
       Then I am get a status code 502 create product
       And validate response body code 502 and message "Must add description"

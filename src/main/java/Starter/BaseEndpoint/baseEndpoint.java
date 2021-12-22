@@ -8,5 +8,5 @@ public class baseEndpoint {
     public String GetProductID = BASE_URL+"/products/";
     public String GetProductSID = BASE_URL+"/products/subcategory/";
     public String User = BASE_URL+"/jwt/users";
-
+    public String Product = BASE_URL+"/jwt/products";
 }
