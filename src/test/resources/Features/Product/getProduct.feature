@@ -25,8 +25,5 @@ Feature: Get All Product and by ID
     Then I am get status code 200 for get product by ID
     And validate success response body code 200 message "Successful Operation" for get product by ID 4
 
-  @TC_4 #SUKSES
-
-
 
 
