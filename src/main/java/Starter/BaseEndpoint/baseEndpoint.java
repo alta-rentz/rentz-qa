@@ -9,4 +9,9 @@ public class baseEndpoint {
     public String GetProductSID = BASE_URL+"/products/subcategory/";
     public String User = BASE_URL+"/jwt/users";
     public String Product = BASE_URL+"/jwt/products";
+    public String DeleteProduct = BASE_URL+"/jwt/products/";
+    public String CreateBooking = BASE_URL+"/jwt/booking";
+    public String SearchBooking = BASE_URL+"/booking/check/";
+    public String GETBooking = BASE_URL+"/jwt/booking/";
+    public String DeleteBooking = BASE_URL+"/jwt/booking/";
 }

@@ -2,16 +2,15 @@ package Starter.Product;
 import Starter.BaseEndpoint.baseEndpoint;
 import net.serenitybdd.rest.SerenityRest;
 import org.json.simple.JSONObject;
-import java.io.File;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.*;
 
-
-public class createProductSteps {
+public class deleteProductSteps {
     baseEndpoint endpoint = new baseEndpoint();
     JSONObject requestparams;
     String token;
 
+    //hit endpoint untuk login sebagai user
     public void hitEndpointLogin(){
         requestparams = new JSONObject();
         requestparams.put("email","olla_ramlanen@gmail.com");
@@ -30,35 +29,26 @@ public class createProductSteps {
                 .extract()
                 .path("data.Token");
     }
-    //setBodyRequest untuk create product
-    public void setBodyRequest(String name,String subcategory_id,String city_id,String price,String description,String stock,String guarantee){
+    //Hit Delete Product By ID
+    public void hitEndPointdeleteProductID(int ID){
         SerenityRest
                 .given()
-                .header("Content-Type","multipart/form-data")
+                .header("Content-Type","application/json")
                 .header("Authorization","Bearer "+token)
-                .multiPart("name",name)
-                .multiPart("subcategory_id",subcategory_id)
-                .multiPart("city_id",city_id)
-                .multiPart("price",price)
-                .multiPart("description",description)
-                .multiPart("stock",stock)
-                .multiPart("guarantee",guarantee)
-                .multiPart("photos",new File("C:/Users/ftoru/Downloads/Logo Rentz besar.png"));
-    }
-    public void hitEnpointCreateProduct(){
-        SerenityRest
                 .when()
-                .post(endpoint.Product);
+                .delete(endpoint.DeleteProduct+ID);
     }
-    public void validateEndpointCreateProduct(int statuscode){
+    //Validasi Respons Code Get Product
+    public void valdateEndpointGet(int statuscode){
         SerenityRest
                 .then()
                 .statusCode(statuscode);
     }
-    public void JsonschemaEndpointCreateProduct(int code, String message){
+    //Validasi JsonSchema Get All Product
+    public void JsonSchemaDeleteProduct(int code, String message){
         SerenityRest
                 .then()
-                .body(matchesJsonSchemaInClasspath("JSONSchema/Product/createProduct.json"))
+                .body(matchesJsonSchemaInClasspath("JSONSchema/Product/deleteProduct.json"))
                 .body("code",equalTo(code))
                 .body("message",equalTo(message));
     }

@@ -12,8 +12,8 @@
     Then I am get a status code 200 create product
     And validate response body code 200 and message "product created and file uploaded successfully"
     Examples:
-      | name                     | subcategory_id | city_id | price | description    | stock | guarantee |
-      | Habis Terang siapa suruh | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
+      | name                    | subcategory_id | city_id | price | description    | stock | guarantee |
+      | Habis Terang kata siapa | 311            | 3273    | 50000 | kepo banget lu | 10    | 2         |
 
     @TC_2
     Scenario Outline: User create product with blank product name

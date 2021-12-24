@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "idBook": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "ProductsID": {
+          "type": "integer"
+        },
+        "Time_In": {
+          "type": "string"
+        },
+        "Time_Out": {
+          "type": "string"
+        },
+        "Total_Day": {
+          "type": "integer"
+        },
+        "Qty": {
+          "type": "integer"
+        },
+        "Total": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ID",
+        "ProductsID",
+        "Time_In",
+        "Time_Out",
+        "Total_Day",
+        "Qty",
+        "Total"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "idBook",
+    "message",
+    "status"
+  ],
+  "additionalProperties": false
+}
