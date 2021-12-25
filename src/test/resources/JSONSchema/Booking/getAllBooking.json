@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "ID": {
+              "type": "integer"
+            },
+            "ProductsID": {
+              "type": "integer"
+            },
+            "Name": {
+              "type": "string"
+            },
+            "Price": {
+              "type": "integer"
+            },
+            "Photos": {
+              "type": "string"
+            },
+            "Time_In": {
+              "type": "string"
+            },
+            "Time_Out": {
+              "type": "string"
+            },
+            "Total_Day": {
+              "type": "integer"
+            },
+            "Qty": {
+              "type": "integer"
+            },
+            "Total": {
+              "type": "integer"
+            },
+            "Status_Payment": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ID",
+            "ProductsID",
+            "Name",
+            "Price",
+            "Photos",
+            "Time_In",
+            "Time_Out",
+            "Total_Day",
+            "Qty",
+            "Total",
+            "Status_Payment"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "code",
+    "data",
+    "message"
+  ],
+  "additionalProperties": false
+}

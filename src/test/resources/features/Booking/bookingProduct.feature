@@ -28,27 +28,34 @@ Feature: POST create booking for user
     Then I get status code 200
     And validate success create booking response message "success create new booking" status "success"
 
-  @PostBooking4 #Sukses
+  @SearchBooking #Sukses
   Scenario Outline: User checks availability booking
     Given I am logged in as user
     And I am set body request time_in "<time_in>" time_out "<time_out>"
-    When I am hit endpoint search booking method post by ID_Booking
+    When I am hit endpoint search booking method post by booking_ID 13
     Then I get status code 200
     And validate success search booking code 200 message "Item available"
     Examples:
       | time_in    | time_out   |
-      | 2022-12-25 | 2022-12-22 |
+      | 2022-12-22 | 2022-12-25 |
 
-  @GetBooking #Sukses
+  @GetAllBooking
+  Scenario: User checks availability of all booking himself
+    Given I am logged in as user
+    When I am hit endpoint get all booking
+    Then I get status code 200
+    And validate success get all booking himself booking code 200 message "Successful Operation"
+
+  @GetBookingByID #Sukses
   Scenario: User want get booking by ID_Booking
     Given I am logged in as user
-    When I am hit endpoint get booking method get by ID_Booking
+    When I am hit endpoint get booking method get by booking_ID 17
     Then I get status code 200
     And validate success get booking code 200 message "Successful Operation"
 
   @DeleteBooking #Sukses
   Scenario: User want Cancel Booking
     Given I am logged in as user
-    When I am hit endpoint cancel booking method delete by ID_Booking
+    When I am hit endpoint cancel booking method delete by booking_ID 17
     Then I get status code 200
     And validate success delete booking code 200 message "Successful Operation"

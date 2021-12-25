@@ -12,6 +12,7 @@ public class baseEndpoint {
     public String DeleteProduct = BASE_URL+"/jwt/products/";
     public String CreateBooking = BASE_URL+"/jwt/booking";
     public String SearchBooking = BASE_URL+"/booking/check/";
-    public String GETBooking = BASE_URL+"/jwt/booking/";
-    public String DeleteBooking = BASE_URL+"/jwt/booking/";
+    public String GETAllBooking = BASE_URL+"/jwt/cart";
+    public String GETBookingID = BASE_URL+"/jwt/booking/";
+    public String DeleteBookingID = BASE_URL+"/jwt/booking/";
 }

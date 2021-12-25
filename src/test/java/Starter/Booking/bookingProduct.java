@@ -51,32 +51,35 @@ public class bookingProduct extends baseTest {
     public void iAmSetBodyRequestTime_inTime_out(String time_in, String time_out) {
         bookingSteps.setBodyRequestSearchBooking(time_in, time_out);
     }
-
-    @When("I am hit endpoint search booking method post by ID_Booking")
-    public void iAmHitEndpointSearchBookingMethodPostByID_Booking(int ID) {
+    @When("I am hit endpoint search booking method post by booking_ID {int}")
+    public void iAmHitEndpointSearchBookingMethodPostByBooking_ID(int ID) {
         bookingSteps.hitEndpointSearchBooking(ID);
     }
-
     @And("validate success search booking code {int} message {string}")
     public void validateSuccessSearchBookingCodeMessage(int code, String message) {
         bookingSteps.JsonschemaEndpointBooking(code, message);
     }
-
-    @When("I am hit endpoint get booking method get by ID_Booking")
-    public void iAmHitEndpointGetBookingMethodGetByID_Booking(int ID) {
-        bookingSteps.hitEndpointGetBooking(ID);
+    @When("I am hit endpoint get all booking")
+    public void iAmHitEndpointGetAllBooking() {
+        bookingSteps.hitEndpointGetAllBooking();
     }
 
+    @And("validate success get all booking himself booking code {int} message {string}")
+    public void validateSuccessGetAllBookingHimselfBookingCodeMessage(int code, String messsage) {
+        bookingSteps.JsonschemaEndpointGetAllBooking(code, messsage);
+    }
+    @When("I am hit endpoint get booking method get by booking_ID {int}")
+    public void iAmHitEndpointGetBookingMethodGetByBooking_ID(int ID) {
+        bookingSteps.hitEndpointGetBooking(ID);
+    }
     @And("validate success get booking code {int} message {string}")
     public void validateSuccessGetBookingCodeMessage(int code, String message) {
         bookingSteps.JsonschemaEndpointGetBooking(code, message);
     }
-
-    @When("I am hit endpoint cancel booking method delete by ID_Booking")
-    public void iAmHitEndpointCancelBookingMethodDeleteByID_Booking(int ID) {
+    @When("I am hit endpoint cancel booking method delete by booking_ID {int}")
+    public void iAmHitEndpointCancelBookingMethodDeleteByBooking_ID(int ID) {
         bookingSteps.hitEndpointDeleteBooking(ID);
     }
-
     @And("validate success delete booking code {int} message {string}")
     public void validateSuccessDeleteBookingCodeMessage(int code, String message) {
         bookingSteps.JsonschemaEndpointBooking(code, message);
