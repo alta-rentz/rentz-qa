@@ -11,42 +11,34 @@ public class bookingProduct extends baseTest {
     public void iAmLoggedInAsUser() {
         bookingSteps.hitEndpointLogin();
     }
-
     @And("I am set body request create booking")
     public void iAmSetBodyRequestCreateBooking() {
         bookingSteps.setBodyRequestCreate();
     }
-
     @When("I am hit endpoint create booking method post")
     public void iAmHitEndpointCreateBookingMethodPost() {
         bookingSteps.hitEndpointCreateBooking();
     }
-
     @Then("I get status code {int}")
     public void iGetStatusCode(int statuscode) {
         bookingSteps.validateEndpointBooking(statuscode);
     }
-
     @And("validate success create booking response message {string} status {string}")
     public void validateSuccessCreateBookingResponseMessageStatus(String message, String status) {
         bookingSteps.JsonschemaEndpointSuccessBooking(message, status);
     }
-
     @And("I am set body request create booking from personal rental booking")
     public void iAmSetBodyRequestCreateBookingFromPersonalRentalBooking() {
         bookingSteps.setBodyRequestPersonalRental();
     }
-
     @And("validate failed create booking response body code {int} message {string}")
     public void validateFailedCreateBookingResponseBodyCodeMessage(int code, String message) {
         bookingSteps.JsonschemaEndpointBooking(code, message);
     }
-
     @And("I am set body request at the same request time_in and time_out")
     public void iAmSetBodyRequestAtTheSameRequestTime_inAndTime_out() {
         bookingSteps.setBodyRequestSameTime();
     }
-
     @And("I am set body request time_in {string} time_out {string}")
     public void iAmSetBodyRequestTime_inTime_out(String time_in, String time_out) {
         bookingSteps.setBodyRequestSearchBooking(time_in, time_out);
@@ -63,7 +55,6 @@ public class bookingProduct extends baseTest {
     public void iAmHitEndpointGetAllBooking() {
         bookingSteps.hitEndpointGetAllBooking();
     }
-
     @And("validate success get all booking himself booking code {int} message {string}")
     public void validateSuccessGetAllBookingHimselfBookingCodeMessage(int code, String messsage) {
         bookingSteps.JsonschemaEndpointGetAllBooking(code, messsage);

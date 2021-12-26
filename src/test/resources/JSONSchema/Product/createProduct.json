@@ -7,11 +7,15 @@
     },
     "message": {
       "type": "string"
+    },
+    "product id": {
+      "type": "integer"
     }
   },
   "required": [
     "code",
-    "message"
+    "message",
+    "product id"
   ],
   "additionalProperties": false
 }
