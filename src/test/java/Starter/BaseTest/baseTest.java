@@ -1,6 +1,7 @@
 package Starter.BaseTest;
 
 import Starter.Booking.bookingSteps;
+import Starter.Checkout.checkoutSteps;
 import Starter.Login.loginSteps;
 import Starter.Product.createProductSteps;
 import Starter.Product.deleteProductSteps;
@@ -16,4 +17,5 @@ public class baseTest {
     public createProductSteps createProductSteps = new createProductSteps();
     public deleteProductSteps deleteProductSteps = new deleteProductSteps();
     public bookingSteps bookingSteps = new bookingSteps();
+    public checkoutSteps checkoutSteps = new checkoutSteps();
 }

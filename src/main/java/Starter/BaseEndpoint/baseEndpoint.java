@@ -15,4 +15,6 @@ public class baseEndpoint {
     public String GETAllBooking = BASE_URL+"/jwt/cart";
     public String GETBookingID = BASE_URL+"/jwt/booking/";
     public String DeleteBookingID = BASE_URL+"/jwt/booking/";
+    public String CheckoutOvo = BASE_URL+"/jwt/checkout/ovo";
+    public String CheckoutOtherThanOvo = BASE_URL+"/jwt/checkout";
 }
