@@ -46,6 +46,7 @@ public class checkoutSteps {
                 .post(endpoint.CheckoutOvo);
     }
     public void setBodyRequestOtherThanOVO(){
+        requestparams = new JSONObject();
         ArrayList<Integer> myNumbers = new ArrayList<Integer>();
         myNumbers.add(96);
         myNumbers.add(97);
