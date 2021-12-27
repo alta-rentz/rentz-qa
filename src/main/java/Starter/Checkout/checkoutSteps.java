@@ -45,13 +45,67 @@ public class checkoutSteps {
                 .when()
                 .post(endpoint.CheckoutOvo);
     }
+    public void setBodyRequestOVOFailed_1(){
+        requestparams = new JSONObject();
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        requestparams.put("booking_id", myNumbers);
+        requestparams.put("phone","+628123123123");
+        SerenityRest
+                .given()
+                .header("Content-Type","application/json")
+                .header("Authorization","Bearer "+token)
+                .body(requestparams.toString())
+                .when()
+                .post(endpoint.CheckoutOvo);
+    }
+    public void setBodyRequestOVOFailed_2(){
+        requestparams = new JSONObject();
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        myNumbers.add(125);
+        requestparams.put("booking_id", myNumbers);
+        requestparams.put("phone","");
+        SerenityRest
+                .given()
+                .header("Content-Type","application/json")
+                .header("Authorization","Bearer "+token)
+                .body(requestparams.toString())
+                .when()
+                .post(endpoint.CheckoutOvo);
+    }
     public void setBodyRequestOtherThanOVO(){
         requestparams = new JSONObject();
         ArrayList<Integer> myNumbers = new ArrayList<Integer>();
         myNumbers.add(96);
         myNumbers.add(97);
         requestparams.put("booking_id", myNumbers);
-        requestparams.put("checkout_method","DANA");
+        requestparams.put("checkout_method","ID_DANA");
+        SerenityRest
+                .given()
+                .header("Content-Type","application/json")
+                .header("Authorization","Bearer "+token)
+                .body(requestparams.toString())
+                .when()
+                .post(endpoint.CheckoutOtherThanOvo);
+    }
+    public void setBodyRequestOtherOVOFailed_1(){
+        requestparams = new JSONObject();
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        requestparams.put("booking_id", myNumbers);
+        requestparams.put("checkout_method","ID_DANA");
+        SerenityRest
+                .given()
+                .header("Content-Type","application/json")
+                .header("Authorization","Bearer "+token)
+                .body(requestparams.toString())
+                .when()
+                .post(endpoint.CheckoutOtherThanOvo);
+    }
+    public void setBodyRequestOtherOVOFailed_2(){
+        requestparams = new JSONObject();
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        myNumbers.add(131);
+        requestparams.put("booking_id", myNumbers);
+        requestparams.put("checkout_method","");
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
@@ -76,6 +130,20 @@ public class checkoutSteps {
         SerenityRest
                 .then()
                 .body(matchesJsonSchemaInClasspath("JSONSchema/Checkout/checkoutOtherOvo.json"))
+                .body("code",equalTo(code))
+                .body("message",equalTo(message));
+    }
+    public void JsonschemaEndpointCheckoutFailed (String message, String status){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/Checkout/checkoutFailed.json"))
+                .body("message",equalTo(message))
+                .body("status",equalTo(status));
+    }
+    public void JsonschemaEndpointCheckoutFailed_1(int code, String message){
+        SerenityRest
+                .then()
+                .body(matchesJsonSchemaInClasspath("JSONSchema/Checkout/checkoutFailed_2.json"))
                 .body("code",equalTo(code))
                 .body("message",equalTo(message));
     }

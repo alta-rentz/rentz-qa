@@ -53,7 +53,27 @@
           ]
         },
         "actions": {
-          "type": "null"
+          "type": "object",
+          "properties": {
+            "desktop_web_checkout_url": {
+              "type": "string"
+            },
+            "mobile_deeplink_checkout_url": {
+              "type": "string"
+            },
+            "mobile_web_checkout_url": {
+              "type": "string"
+            },
+            "qr_checkout_string": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "desktop_web_checkout_url",
+            "mobile_deeplink_checkout_url",
+            "mobile_web_checkout_url",
+            "qr_checkout_string"
+          ]
         },
         "is_redirect_required": {
           "type": "boolean"
