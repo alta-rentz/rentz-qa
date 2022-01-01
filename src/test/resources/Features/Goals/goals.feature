@@ -8,8 +8,8 @@ Feature: User booking goals to mvp
   Scenario: User performs an mvp success by using ovo
     Given I am logged as user rental
     And Or I am logged as user booking
-    When I am set body request create product as user rental
-    And I am set body request booking product as user booking
+    When I am set body request create product with ovo as user rental
+    And I am set body request booking product as user booking with ovo
     And I am set body request checkout booking with ovo
     Then I am get statucscode 200 goals mvp
     And validate success checkout with ovo response code 200 and message "Your CheckOut Success"
@@ -18,8 +18,8 @@ Feature: User booking goals to mvp
   Scenario: user performs an mvp success by using other ovo
     Given I am logged as user rental
     And Or I am logged as user booking
-    When I am set body request create product as user rental
-    And I am set body request booking product as user booking
+    When I am set body request create product with other ovo as user rental
+    And I am set body request booking product as user booking with other ovo
     And I am set body request checkout booking with other ovo
     Then I am get statucscode 200 goals mvp
     And validate success checkout with other ovo response code 200 and message "Your CheckOut Success"

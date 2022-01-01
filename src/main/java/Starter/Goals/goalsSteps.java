@@ -16,6 +16,8 @@ public class goalsSteps {
     String token_1;
     Integer ID;
     Integer ID_1;
+    Integer ID_2;
+    Integer ID_3;
 
     //hit endpoint untuk login sebagai user rental
     public void hitEndpointLoginUserRental(){
@@ -55,20 +57,20 @@ public class goalsSteps {
                 .extract()
                 .path("data.Token");
     }
-    //hit endpoint create product
-    public void setBodyRequestCreateProductUserProduct(){
+    //hit endpoint create product with ovo
+    public void setBodyRequestCreateProductUserRentalWithOvo(){
         SerenityRest
                 .given()
                 .header("Content-Type","multipart/form-data")
                 .header("Authorization","Bearer "+ token)
-                .multiPart("name","injang bulldog_4")
+                .multiPart("name","Dell Vostro 14 3000")
                 .multiPart("subcategory_id",311)
                 .multiPart("city_id",3273)
                 .multiPart("price",10000)
-                .multiPart("description","bantal masih diplastikin")
+                .multiPart("description","Laptop i3 gen 10th")
                 .multiPart("stock",99)
                 .multiPart("guarantee",1)
-                .multiPart("photos",new File("C:/Users/ftoru/Downloads/Logo Rentz besar.png"))
+                .multiPart("photos",new File("C:/Users/ftoru/Pictures/DellVostro143405.jpg"))
                 .when()
                 .post(endpoint.Product);
 
@@ -77,11 +79,33 @@ public class goalsSteps {
                 .extract()
                 .path("product_id");
     }
-    public void setBodyRequestCreateBookingUserBooking() {
+    //hit endpoint create product other ovo
+    public void setBodyRequestCreateProductUserRentalOtherOvo(){
+        SerenityRest
+                .given()
+                .header("Content-Type","multipart/form-data")
+                .header("Authorization","Bearer "+ token)
+                .multiPart("name","Acer Aspire 14")
+                .multiPart("subcategory_id",311)
+                .multiPart("city_id",3273)
+                .multiPart("price",10000)
+                .multiPart("description","laptop i5 gen 10th")
+                .multiPart("stock",99)
+                .multiPart("guarantee",1)
+                .multiPart("photos",new File("C:/Users/ftoru/Pictures/AcerAspireE14.jpg"))
+                .when()
+                .post(endpoint.Product);
+
+        ID_1 = SerenityRest
+                .then()
+                .extract()
+                .path("product_id");
+    }
+    public void setBodyRequestCreateBookingUserBookingWithOvo() {
         requestparams = new JSONObject();
         requestparams.put("product_id",ID);
-        requestparams.put("time_in", "2021-12-27");
-        requestparams.put("time_out", "2021-12-28");
+        requestparams.put("time_in", "2021-12-31");
+        requestparams.put("time_out", "2022-01-01");
         requestparams.put("qty", 2);
 
         SerenityRest
@@ -92,15 +116,35 @@ public class goalsSteps {
                 .when()
                 .post(endpoint.CreateBooking);
 
-        ID_1 = SerenityRest
+        ID_2 = SerenityRest
+                .then()
+                .extract()
+                .path("idBook.ID");
+    }
+    public void setBodyRequestCreateBookingUserBookingOtherOvo() {
+        requestparams = new JSONObject();
+        requestparams.put("product_id",ID_1);
+        requestparams.put("time_in", "2021-12-31");
+        requestparams.put("time_out", "2022-01-01");
+        requestparams.put("qty", 2);
+
+        SerenityRest
+                .given()
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + token_1)
+                .body(requestparams.toString())
+                .when()
+                .post(endpoint.CreateBooking);
+
+        ID_3 = SerenityRest
                 .then()
                 .extract()
                 .path("idBook.ID");
     }
     public void setBodyRequestOVO(){
         requestparams = new JSONObject();
-        ArrayList<Integer> myNumbers = new ArrayList<Integer>(ID_1);
-        myNumbers.add(ID_1);
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>(ID_2);
+        myNumbers.add(ID_2);
         requestparams.put("booking_id", myNumbers);
         requestparams.put("phone","+628232327327283");
         SerenityRest
@@ -113,10 +157,10 @@ public class goalsSteps {
     }
     public void setBodyRequestOtherOVO(){
         requestparams = new JSONObject();
-        ArrayList<Integer> myNumbers = new ArrayList<Integer>(ID_1);
-        myNumbers.add(ID_1);
+        ArrayList<Integer> myNumbers = new ArrayList<Integer>(ID_3);
+        myNumbers.add(ID_3);
         requestparams.put("booking_id", myNumbers);
-        requestparams.put("checkout_method","DANA");
+        requestparams.put("checkout_method","ID_DANA");
         SerenityRest
                 .given()
                 .header("Content-Type","application/json")
